@@ -25,7 +25,7 @@ export const symbols: Controller = () =>
         symbol = await Cache.create({
           symbols: Object.keys(data.symbols),
           // expire in 4 hrs
-          expiresAt: new Date().setHours(new Date().getHours() + 4)
+          expireAt: new Date().setHours(new Date().getHours() + 4)
         });
       } else {
         ([symbol] = symbols)
@@ -88,7 +88,7 @@ export const manualConvert: Controller = () =>
 
         // expire in 15 mins, since rates may change quick
         rate = await Rate.create({
-          expiresAt: new Date().setMinutes(new Date().getMinutes() + 15),
+          expireAt: new Date().setMinutes(new Date().getMinutes() + 15),
           base: data.base, 
           rates: data.rates
         });
