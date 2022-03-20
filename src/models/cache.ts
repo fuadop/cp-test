@@ -17,7 +17,7 @@ const cacheSchema = new Schema<Cache>({
     type: [String],
     required: true
   }
-});
+}, { timestamps: true });
 
 const rateSchema = new Schema<IRate>({
   rates: {
@@ -29,7 +29,7 @@ const rateSchema = new Schema<IRate>({
     required: true,
     default: "EUR"
   }
-});
+}, { timestamps: true });
 
 export const Rate = model("rate", rateSchema);
 export default model("cache", cacheSchema);
