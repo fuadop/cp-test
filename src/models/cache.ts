@@ -1,12 +1,12 @@
 import { Schema, model } from "mongoose";
 
 interface Cache {
-  expiresAt: Date,
+  expireAt: Date,
   symbols: string[]
 }
 
 interface IRate {
-  expiresAt: Date,
+  expireAt: Date,
   rates: { [x: string]: number },
   base: string
 }
